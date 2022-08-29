@@ -1,0 +1,12 @@
+#!/bin/bash
+
+#author: DarthChai
+
+DATABASE=table_database						# the database of the table
+SCHEMA=table_schema							# the schema of the table
+file=file_name.extension					# the file name & extension you want to store the result in
+
+query="Select * from $DATABASE.$SCHEMA.table"
+nzsql -u username -pw password -d $DATABASE -schema $SCHEMA -host XYZ  -o $file -A -t -c  "$query" 	  # you need to provide the username, its password, and hostname
+
+exit
